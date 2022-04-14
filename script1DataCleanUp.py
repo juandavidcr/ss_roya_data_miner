@@ -72,7 +72,7 @@ def getInfoData(route):
                     #print(line)
                     texto=line
                     archivo.writelines(texto)
-            archivo.close()
+                archivo.close()
             text_file.close()
     else:
         print('El archivo no existe')
