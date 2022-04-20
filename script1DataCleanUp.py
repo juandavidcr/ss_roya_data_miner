@@ -72,7 +72,7 @@ def getInfoData(route):
                     #print(line)
                     texto=line
                     archivo.writelines(texto)
-                archivo.close()
+                archivo.close() #se descubre que debemos cerrar el archivo antes de abrir el siguiente por eso lo manda aun solo archivo
             text_file.close()
     else:
         print('El archivo no existe')
@@ -82,8 +82,8 @@ def countlines(filein):
     n=0
     for linea in fin:
         n+=1    
-    print(n)
     fin.close()
+    print(n)
     return n
 
 def printlineas(route):
@@ -99,8 +99,7 @@ def printlineas(route):
     else:
         print('El archivo no existe')
     print(datos) 
-#lineasFile1 = countlines(listaData[0])
-#getInfoData(listaData[0])       
+     
 for x in listaData:
     #getInfoDataTable(x)
     getInfoData(x)
