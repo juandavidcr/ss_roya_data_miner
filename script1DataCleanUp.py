@@ -100,6 +100,9 @@ def printlineas(route):
         print('El archivo no existe')
     print(datos) 
      
+#def insertDataFromNewFile():
+
+
 for x in listaData:
     #getInfoDataTable(x)
     getInfoData(x)

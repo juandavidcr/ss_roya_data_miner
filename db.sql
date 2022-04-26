@@ -26,7 +26,7 @@ CREATE TABLE Estacion_climatologica (
     organismo_id int(10),
     latitud varchar(50),
     longitud varchar(50),
-    altitud_msnm BIGINT(10),
+    altitud_msnm varchar(50),
     emision_fecha DATE,
     PRIMARY KEY (id_estacion),
     FOREIGN KEY (municipio_id) REFERENCES Municipio(id_municipio),
