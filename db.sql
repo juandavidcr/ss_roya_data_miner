@@ -16,7 +16,7 @@ CREATE TABLE Municipio(
     PRIMARY KEY (id_municipio),
     FOREIGN KEY (estado_id) REFERENCES Estados_Republica_Mex(id_estado)
 );
-
+DROP TABLE Estacion_climatologica;
 CREATE TABLE Estacion_climatologica (
     id_estacion int(20) NOT NULL AUTO_INCREMENT ,
     num_estacion varchar(50),
