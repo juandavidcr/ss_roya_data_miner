@@ -6,6 +6,14 @@ midb =mysql.connector.connect(
     user='root',
     password='psytranc3',
     database='climatologia_diaria'
+#
+#     host='localhost',
+#     user='root',
+#     password='',
+#     database='climatologia_diaria'
+# 
+# #
+
 )
 
 cursor=midb.cursor()

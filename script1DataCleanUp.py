@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # decoding: utf-8
-from distutils import text_file
 import os
 import re
 import itertools
@@ -102,6 +101,24 @@ def printlineas(route):
      
 #def insertDataFromNewFile():
 
+
+#TODO: CREAR FUNCION DE CREACION DE DATE
+# LEER DEL ARCHIVO newfile.txt 
+# TODOS LOS DATOS
+#
+# ESTACION  : 30012
+# NOMBRE    : ATZALAN
+# ESTADO    : VERACRUZ DE IGNACIO DE LA LLAVE
+# MUNICIPIO : ATZALAN
+# SITUACI�N : OPERANDO
+# ORGANISMO : CONAGUA-SMN
+# CVE-OMM   : Nulo
+# LATITUD   : 019.789�
+# LONGITUD  : -097.246�
+# ALTITUD   : 1,697 msnm
+ 
+# EMISION   : 06/04/2020 
+# #
 
 for x in listaData:
     #getInfoDataTable(x)
