@@ -34,3 +34,22 @@ python3 script1DataCleanUp.py
 ```sh
 python3 db.py
 ```
+
+```sh
+mkdir ss_roya
+cd ss_roya
+sudo apt install python3.8-venv
+python3 -m venv venv
+ls
+---------
+- /venv -
+---------
+. venv/bin/activate
+
+(venv)your/terminal/~ pip3 install Flask
+export FLASK_APP=holamundo.py
+flask run
+export FLASK_ENV=development
+export FLASK_APP=holamundo.py
+
+```
