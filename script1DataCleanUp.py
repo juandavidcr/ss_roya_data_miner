@@ -1,5 +1,26 @@
 #!/usr/bin/env python
 # decoding: utf-8
+#
+# 
+# Script que separa la información de los txt
+#
+# TODO: CREAR FUNCION DE CREACION DE DATE
+# LEER DEL ARCHIVO newfile.txt 
+# TODOS LOS DATOS
+#
+# ESTACION  : 30012
+# NOMBRE    : ATZALAN
+# ESTADO    : VERACRUZ DE IGNACIO DE LA LLAVE
+# MUNICIPIO : ATZALAN
+# SITUACI�N : OPERANDO
+# ORGANISMO : CONAGUA-SMN
+# CVE-OMM   : Nulo
+# LATITUD   : 019.789�
+# LONGITUD  : -097.246�
+# ALTITUD   : 1,697 msnm
+# EMISION   : 06/04/2020
+#  
+# #
 import os
 import re
 import itertools
@@ -54,6 +75,7 @@ def getInfoDataTable(route):
             archivo = open("newfile.txt","a")
             for line in itertools.islice(text_file, 4, 17):
                 #print(line)
+                
                 texto=line
                 archivo.writelines(texto)
             archivo.close()
@@ -95,30 +117,28 @@ def printlineas(route):
         for linea in file_lines:
            # datos.append(linea.strip('\n'))
             print(linea)
+            #gnerar un diccionario por cada llave de dicc nombre del dicc: Identificacion [ESTACION]= 
+            #datos = linea.split(" : ") 
+            #obtner llave y valor en el 
+            #identificacion[datos[0]] = datos[1] 
+            #de que lienas estoy leyendo el archivo
+            #validar :\s
+            #
+            # 1. Leer línea por línea del archivos:
+            # 1.1. Comparar si es línea de identificación:
+            # -- Si tiene como subcadena alguna de las líneas de 1 a 19:
+            # ---Generar el SQL para insertar en la tabla de identificaciones
+            # -- Si es línea de datos, debe tener "/"
+            # ---Generar el SQL para insertar en la tabla de datos 
+            # por cada archivo txt que tengo correr el script de la base
+            # insert primero la estacion id
+            # convertir 
+            # #
     else:
         print('El archivo no existe')
     print(datos) 
      
-#def insertDataFromNewFile():
 
-
-#TODO: CREAR FUNCION DE CREACION DE DATE
-# LEER DEL ARCHIVO newfile.txt 
-# TODOS LOS DATOS
-#
-# ESTACION  : 30012
-# NOMBRE    : ATZALAN
-# ESTADO    : VERACRUZ DE IGNACIO DE LA LLAVE
-# MUNICIPIO : ATZALAN
-# SITUACI�N : OPERANDO
-# ORGANISMO : CONAGUA-SMN
-# CVE-OMM   : Nulo
-# LATITUD   : 019.789�
-# LONGITUD  : -097.246�
-# ALTITUD   : 1,697 msnm
- 
-# EMISION   : 06/04/2020 
-# #
 
 for x in listaData:
     #getInfoDataTable(x)

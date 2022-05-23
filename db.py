@@ -30,9 +30,11 @@ cursor=midb.cursor()
 #cursor.execute(sqlQueryMunicipio, values)
 #cursor.execute(sqlOrg, valuesOrg)
 null=None
-sqlInsertDatosClimatologicos='''INSERT INTO Datos_Climatologicos (fecha, precipitacion_mm, evaporacion_mm, tmax, tmin, humedad_relativa,
-estacion_id) values(%s,%s,%s,%s,%s,%s,%s)'''
-valuesData = (date(1924,7,19),0,null, 20.0 ,12.0,null,1 )
+humedadRelativa=None
+#convertir datos antes de insertar, leer fecha con el metodo date parseados en num,
+sqlInsertDatosClimatologicos='''INSERT INTO Datos_Climatologicos (fecha, precipitacion_mm, 
+evaporacion_mm, tmax, tmin, humedad_relativa,estacion_id) values(%s,%s,%s,%s,%s,%s,%s)'''
+valuesData = (date(1924,7,19),0,null, 20.0 ,12.0,humedadRelativa,1 )
 cursor.execute(sqlInsertDatosClimatologicos, valuesData)
 midb.commit()
 print (cursor.rowcount)
