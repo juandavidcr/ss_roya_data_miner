@@ -14,6 +14,10 @@ def create_app():
 
     from . import db
     db.init_app(app)
+    #Suscribirse a blueprint
+
+    from . import auth
+    app.register_blueprint(auth.bp)
 
     @app.route('/hola')
     def hola():
