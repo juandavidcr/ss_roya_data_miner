@@ -15,10 +15,42 @@ archivo = open("./newfile.txt")
     
 
 i = 1
+listaEstaciones=[]
+listaNombreEstaciones=[]
+listaMun=[]
+listaOrg=[]
+listaLat=[]
+listaLon=[]
+listaAlt=[]
 for linea in archivo:
     linea = linea.rstrip("\\n") 
     listResult=re.split(r'\s+', linea) 
     print(listResult)
+    if(listResult[0]=='LONGITUD'):
+        listaLon.append(listResult[2])
+        print(listaLat)
+    if(listResult[0]=='LATITUD'):
+        listaLat.append(listResult[2])
+        print(listaLon)
+    if(listResult[0]=='ORGANISMO'):
+        print("organismo-list")
+        listaOrg.append(listResult[2])
+        print(listaOrg)
+    if(listResult[0]=='MUNICIPIO'):
+        print("Municipio existe")
+        listaMun.append(listResult[2])
+        print(listaMun)
+    if(listResult[0]=='ESTACION'):
+        print("Existe Estacion")
+        listaEstaciones.append(listResult[2])
+        print(listaEstaciones)
+    if(listResult[0]=='NOMBRE'):
+        print("Existe nombre-estacion")
+        listaNombreEstaciones.append(listResult[2])
+        print(listaNombreEstaciones)
+    if(listResult[0]=='ALTITUD'):
+        listaAlt.append(listResult[2]+' '+listResult[3])
+        print(listaAlt)
     #if(type(linea)=='str'):
     #   ec_num_estacion=re.split(r'\s+', linea)
         #if(ec_num_estacion[0]):
