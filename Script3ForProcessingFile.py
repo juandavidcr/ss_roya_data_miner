@@ -1,6 +1,28 @@
 import re
+from datetime import date
+import mysql.connector
+
+midb =mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='psytranc3',
+    database='climatologia_diaria'
+#
+#     host='localhost',
+#     user='root',
+#     password='',
+#     database='climatologia_diaria'
+# 
+# #
+
+)
+
 #1.- Detectar los puntos de interes del archivo que se esta leyendo
 # ec_num_estacion=[]
+cursor=midb.cursor()
+null=None
+humedadRelativa=None
+Estado_ID=30
 archivo = open("./newfile.txt")
 # file =open("./atzalandata.txt")
 # for line in file:
@@ -12,7 +34,7 @@ archivo = open("./newfile.txt")
 #     print(lst)
 #     print(dd,linea,re.findall(r'\\/+', exStr))
 
-    
+sqlQueryMunicipio = 'INSERT INTO Municipio (estado_id,nombre_mun) values (%s,%s)'
 
 i = 1
 listaEstaciones=[]
@@ -38,6 +60,8 @@ for linea in archivo:
         print(listaOrg)
     if(listResult[0]=='MUNICIPIO'):
         print("Municipio existe")
+        values = (Estado_ID,listResult[2])
+        cursor.execute(sqlQueryMunicipio, values)
         listaMun.append(listResult[2])
         print(listaMun)
     if(listResult[0]=='ESTACION'):
@@ -51,6 +75,8 @@ for linea in archivo:
     if(listResult[0]=='ALTITUD'):
         listaAlt.append(listResult[2]+' '+listResult[3])
         print(listaAlt)
+    midb.commit()
+    print (cursor.rowcount)
     #if(type(linea)=='str'):
     #   ec_num_estacion=re.split(r'\s+', linea)
         #if(ec_num_estacion[0]):
