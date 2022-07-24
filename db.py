@@ -17,7 +17,9 @@ midb =mysql.connector.connect(
 )
 
 cursor=midb.cursor()
-#TODO convertir datos antes de insertar, leer fecha con el metodo date parseados en num, ORDEN DE INSERCIÓN: MUNICIPIO, ORG,ESTACION CLIMATOLOGICA
+#TODO convertir datos antes de insertar, leer fecha con el metodo date parseados en num, 
+# ORDEN DE INSERCIÓN: MUNICIPIO, ORG,ESTACION CLIMATOLOGICA
+
 #sqlQueryMunicipio = 'INSERT INTO Municipio (estado_id,nombre_mun) values (%s,%s)'
 #values = (30,'ATZALAN')
 
