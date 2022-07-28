@@ -67,15 +67,15 @@ listNames = [
     "zongolica"+namefile+sufixFile
 ]
 #se agregan todas las rutas de los archivos a depurar
-
+#Funcion encargada de separar las cabeceras de los datos en bruto
 def getInfoDataTable(route):
     print(route)
     if os.path.exists(route):
         with open(route, "r") as text_file:
+            #se dividen las cabeceras de los datos de todas las estaciones
             archivo = open("newfile.txt","a")
+            #de la linea 4 del archivo se identifica un patron de información de las estaciones que ayudara a crear las tablas de municipio, organismo, Estado de la Republica Mexicana y Estación Climatológica.
             for line in itertools.islice(text_file, 4, 17):
-                #print(line)
-                
                 texto=line
                 archivo.writelines(texto)
             archivo.close()
@@ -87,13 +87,16 @@ def getInfoData(route):
     print(route)
     if os.path.exists(route):
         with open(route, "r") as text_file:
+            #nombre de la estación climatologica a cargar
             for name in listNames:
                 archivo = open(name,"a")
+                #de la linea 17 en adelante se encuentra la data en bruto por cada estación climatologica dependiendo del numero de líneas por cada archivo
                 for line in itertools.islice(text_file, 17, countlines(route)):
                     #print(line)
                     texto=line
                     archivo.writelines(texto)
-                archivo.close() #se descubre que debemos cerrar el archivo antes de abrir el siguiente por eso lo manda aun solo archivo
+                #se descubre que debemos cerrar el archivo antes de abrir el siguiente por eso lo mandaba a un solo archivo
+                archivo.close() 
             text_file.close()
     else:
         print('El archivo no existe')
@@ -106,7 +109,7 @@ def countlines(filein):
     fin.close()
     print(n)
     return n
-
+#funcion para hacer pruebas de lectura de lineas y escritura de lineas por archivo recibe la rurta del archivo
 def printlineas(route):
     print(route)
     if os.path.exists(route):
@@ -139,7 +142,7 @@ def printlineas(route):
     print(datos) 
      
 
-
+#Genera elarchivo de los encabezados y el archivo de los datos de cada estación por nombre dejandole un sufijo de la siguiente manera 'nombredelarchivo'+'data'+.txt y newfile.txt contendra las cabeceras de las estaciones para saber el numero de estaciones.
 for x in listaData:
     #getInfoDataTable(x)
     getInfoData(x)
