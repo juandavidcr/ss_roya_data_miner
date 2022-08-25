@@ -5,3 +5,4 @@ if(regex.test(text)){
 }else{
     console.log("Es incorrecto")
 }
+
