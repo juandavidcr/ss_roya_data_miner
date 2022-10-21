@@ -53,9 +53,10 @@ archivo = open("./newfile.txt")
 #sqlQueryMunicipio = 'INSERT INTO Municipio (estado_id,nombre_mun) values (%s,%s)'
 #sqlOrg = 'INSERT INTO Organismo (nombre_org) values(%s)'
 #createFecha('2022','05','22')
-#sql = 'INSERT INTO Estacion_climatologica (num_estacion,nombre_estacion, situacion, municipio_id, organismo_id, latitud, longitud, altitud_msnm, emision_fecha) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+sql = 'INSERT INTO Estacion_climatologica (num_estacion,nombre_estacion, situacion, municipio_id, organismo_id, latitud, longitud, altitud_msnm, emision_fecha) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
 #valuesMet = (30012,'ATZALAN','OPERANDO',1,1,'019.789','-097.246','1,697 msnm',date(2020,4,6))
-
+valuesMet = (30452,'COATEPEC','OPERANDO',2,2,'019.508','-096.949','1,349 msnm',date(2020,4,6))
+cursor.execute(sql, valuesMet)
 #definicion de lista de data 
 i = 1
 listaMun=[]
@@ -125,7 +126,7 @@ for linea in archivo:
     if(listResult[0]=='ALTITUD'):
         listaAlt.append(listResult[2]+' '+listResult[3])
         print(listaAlt)
-    #midb.commit()
+    midb.commit()
     #print (cursor.rowcount)
     #if(type(linea)=='str'):
     #   ec_num_estacion=re.split(r'\s+', linea)
