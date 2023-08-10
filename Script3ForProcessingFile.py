@@ -4,7 +4,8 @@
 # 
 # Script que separa la información de los txt
 #
-#
+# // EJEMPLO
+# 
 # ESTACION  : 30012
 # NOMBRE    : ATZALAN
 # ESTADO    : VERACRUZ DE IGNACIO DE LA LLAVE
